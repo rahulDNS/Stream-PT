@@ -1,0 +1,43 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Arial;
+  background: #f6fbff;
+  color: #0b2545;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+.video-box {
+  background: black;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#stream {
+  width: 100%;
+  border-radius: 6px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+

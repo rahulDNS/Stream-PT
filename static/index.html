@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edge-Streaming – Live MJPEG Stream</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Edge-Streaming — Live Video Feed</h1>
+
+  <div class="video-box">
+    <img id="stream" src="/stream" alt="Live stream">
+  </div>
+
+  <p id="status">Status: connecting…</p>
+
+  <button id="snapBtn">Take Snapshot</button>
+  <a id="snapLink" download="snapshot.jpg" style="display:none;">Download Snapshot</a>
+
+</div>
+
+<script>
+const status = document.getElementById("status");
+const stream = document.getElementById("stream");
+
+stream.onload = () => status.innerText = "Status: streaming";
+stream.onerror = () => status.innerText = "Status: error loading stream";
+
+document.getElementById("snapBtn").onclick = async () => {
+  status.innerText = "Status: capturing…";
+  try {
+    const resp = await fetch("/snapshot");
+    const blob = await resp.blob();
+    const url = URL.createObjectURL(blob);
+    const link = document.getElementById("snapLink");
+    link.href = url;
+    link.style.display = "inline";
+    link.click();
+    status.innerText = "Status: snapshot ready";
+  } catch (err) {
+    status.innerText = "Status: snapshot failed";
+  }
+};
+</script>
+
+</body>
+</html>
+
