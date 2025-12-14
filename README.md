@@ -97,7 +97,7 @@ sudo apt install python3-opencv python3-pip libatlas-base-dev
 
 Clone the project
 
-git clone https://github.com/<your-user>/<repo>.git
+git clone https://github.com/<your-user>/<repo>
 cd <repo>
 
 
