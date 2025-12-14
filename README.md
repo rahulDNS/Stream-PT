@@ -32,14 +32,12 @@ No FFmpeg builds, no PyAV compilation, no WebRTC complexity.
 ## Project Structure
 
 Edge-Streaming/
-├── server.py
-├── requirements.txt
-└── static/
-├── index.html
-└── style.css
+-server.py
+-requirements.txt
+-static/
+  -index.html
+  -style.css
 
-yaml
-Copy code
 
 ---
 
